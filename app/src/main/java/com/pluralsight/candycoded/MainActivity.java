@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
                         SQLiteDatabase db = candyDbHelper.getWritableDatabase();
                         Cursor cursor = db.rawQuery("SELECT * FROM candy", null);
-//                        adapter.changeCursor(cursor);
+                        adapter.changeCursor(cursor);
                     }
                 });
     }
@@ -103,13 +103,5 @@ public class MainActivity extends AppCompatActivity {
 
             db.insert(CandyEntry.TABLE_NAME, null, values);
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent infoIntent = new Intent(this, InfoActivity.class);
-        startActivity(infoIntent);
-
-        return super.onOptionsItemSelected(item);
     }
 }
